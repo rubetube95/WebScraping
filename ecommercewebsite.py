@@ -1,4 +1,5 @@
 from selenium import webdriver #selenium is a library used for browser-based automation/scraping
+#for more on selenium - https://selenium-python.readthedocs.io/getting-started.html
 from selenium.webdriver.common.keys import Keys #importing the Keys class allows you to use keys in the keyboard like RETURN, F1, ALT etc.
 from webdriver_manager.chrome import ChromeDriverManager #importing module to help deploy chrome. 
 
