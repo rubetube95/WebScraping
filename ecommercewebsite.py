@@ -21,11 +21,13 @@ soup = BeautifulSoup(html, 'html.parser')
 
 def process_products(): #creating a method that will be callable later
     clean_product_list = []
+    #python allows for both single and double inverted commas - both have the same function
     products = soup.find_all("article",{"class":"product result-prd"}) #calling the parent HTMl element/container from which the data resides
     
     for product in products: #basic for loop to go through all the child data in that container
         data_dict = {}
         desc = product.find("div",{"class":"desc"})
+        #within the bracket above. The div is the outer element. That can be span, strong, article, a, etc.
         data_dict['product_brand']  = desc.find("span",{"data-product":"brand"}).text.strip()
         data_dict['product_name']   = desc.find("span",{"data-product":"name"}).text.strip()
         data_dict['product_price']  = desc.find("strong",{"class":"price"}).text.strip()
